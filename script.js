@@ -56,6 +56,7 @@ class RootElement {
     constructor(tagName = 'div') {
         this.$el = document.createElement(tagName)
         this.$el.style.marginBottom = '13px'
+        this.$el.style.display = 'flex'
     }
     hide() {
         this.$el.style.opacity = '0'
