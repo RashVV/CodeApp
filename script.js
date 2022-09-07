@@ -44,7 +44,6 @@ const shop = `<li>${createMenuLinks({path: 'https://hungry-wozniak-a047a1.netlif
 const game = `<li>${createMenuLinks({path: 'https://zesty-hummingbird-6ea8d6.netlify.app/', menuName: 'React App Squire piker'})}</li>`
 const amp = `<li>${createMenuLinks({path: 'https://agitated-ramanujan-94204b.netlify.app/', menuName: 'AMP Supper Fast WebSite'})}</li>`
 
-
 menu.insertAdjacentHTML('afterbegin', about)
 menu.insertAdjacentHTML('afterbegin', shop)
 menu.insertAdjacentHTML('afterbegin', amp)
@@ -52,7 +51,6 @@ menu.insertAdjacentHTML('afterbegin', game)
 
 
 //Class RootElement <= Box <= Instance
-
 
 class RootElement {
     constructor(tagName = 'div') {
@@ -114,4 +112,20 @@ circle.$el.addEventListener('mouseenter', () => {
 
 circle.$el.addEventListener('mouseleave', () => {
     circle.show()
+})
+
+blueBox.$el.addEventListener('mouseenter', () => {
+    blueBox.hide()
+})
+
+blueBox.$el.addEventListener('mouseleave', () => {
+    blueBox.show()
+})
+
+redBox.$el.addEventListener('mouseenter', () => {
+    redBox.hide()
+})
+
+redBox.$el.addEventListener('mouseleave', () => {
+    redBox.show()
 })
