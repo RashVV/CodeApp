@@ -36,3 +36,20 @@ function saveLid(...args) {
     }
     console.log('Lid', formData)
 }
+
+const createMenuLinks = ({path, menuName}) => `<a target="_blank" href="${path}">${menuName}</a>`
+const menu = document.querySelector('ul')
+const about = `<li>${createMenuLinks({path: 'https://apasltd.com', menuName: 'Main Site'})}</li>`
+const shop = `<li>${createMenuLinks({path: 'https://hungry-wozniak-a047a1.netlify.app/', menuName: 'E-commerce example'})}</li>`
+const game = `<li>${createMenuLinks({path: 'https://zesty-hummingbird-6ea8d6.netlify.app/', menuName: 'React App Squire piker'})}</li>`
+const amp = `<li>${createMenuLinks({path: 'https://agitated-ramanujan-94204b.netlify.app/', menuName: 'AMP Supper Fast WebSite'})}</li>`
+
+
+menu.insertAdjacentHTML('afterbegin', about)
+menu.insertAdjacentHTML('afterbegin', shop)
+menu.insertAdjacentHTML('afterbegin', amp)
+menu.insertAdjacentHTML('afterbegin', game)
+
+
+//
+
