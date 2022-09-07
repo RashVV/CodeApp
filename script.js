@@ -130,3 +130,52 @@ redBox.$el.addEventListener('mouseenter', () => {
 redBox.$el.addEventListener('mouseleave', () => {
     redBox.show()
 })
+
+//DpopDownList
+
+class Dropdown {
+    constructor(selector, options) {
+        this.$choose = document.querySelector(selector)
+        this.items = options.items
+        this.$choose.querySelector('.dropdown__label').textContent = this.items[0].label
+        this.$choose.addEventListener('click', event => {
+            if (event.target.classList.contains('dropdown__label')) {
+                if (this.$choose.classList.contains('open')) {
+                    this.close()
+                } else {
+                    this.open()
+                }
+            } else if(event.target.tagName.toLowerCase() === 'li') {
+                this.select(event.target.dataset.id)
+            }
+        })
+        this.items.shift()
+        const itemsHTML = this.items.map(i => {
+            return `<li data-id="${i.id}">${i.label}</li>`
+        }).join(' ')
+        this.$choose.querySelector('.dropdown__variants').insertAdjacentHTML('afterbegin', itemsHTML)
+        console.log(this.$choose)
+    }
+    select(id) {
+        const item = this.items.find(i => i.id === id)
+        this.$choose.querySelector('.dropdown__label').textContent = item.label
+        this.close()
+        console.log(item)
+    }
+    open() {
+        this.$choose.classList.add('open')
+    }
+    close() {
+        this.$choose.classList.remove('open')
+    }
+}
+
+const chooseService = new Dropdown ('#choose', {
+    items: [
+        {label: 'Take your Variant', id: 'lable'},
+        {label: 'Landing Page', id: 'lp'},
+        {label: 'WebGame', id: 'wg'},
+        {label: 'WebApp', id: 'wa'},
+        {label: 'Accelerated Mobil Page', id: 'amp'}
+    ]
+})

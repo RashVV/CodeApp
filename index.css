@@ -1,3 +1,40 @@
+* {
+    box-sizing: border-box;
+}
 .app {
     display: flex;
+}
+.dropdown {
+    position: relative;
+    width: 400px;
+}
+.dropdown.open .dropdown__variants {
+    display: block;
+}
+.dropdown__label {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.dropdown__variants {
+    top: 31px;
+    width: 100%;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.dropdown__variants li {
+    padding: 5px 10px;
+}
+.dropdown__variants li:hover {
+    background: grey;
+    cursor: pointer;
 }
