@@ -15,16 +15,24 @@ form.addEventListener('submit', event => {
     const role = form.role.value
     const email = form.email.value
 
-    saveLid ({name, role, email})
+    saveLid (name, role, email)
 })
 
-function saveLid(data) {
+//Spread operator
+// function saveLid(data) {
+//     const formData = {
+//         date : new Date().toLocaleDateString(),
+//         ...data
+//     }
+// console.log('Lid', formData)
+// }
+//Rest operator
+function saveLid(...args) {
+    //console.log('Args-IS:', args)
+    const [name, role, email] = args
     const formData = {
         date : new Date().toLocaleDateString(),
-        ...data
-        //name: data.name,
-        //role: data.role,
-        //email: data.email
+        name, role, email//...data
     }
-console.log('Lid', formData)
+    console.log('Lid', formData)
 }
